@@ -1,0 +1,147 @@
+.annotate-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    width: 100%;
+}
+
+
+.upper-container {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    padding-left: 40px;  
+}
+
+.helper-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+    flex-direction: column;
+    height: 100%;  
+}
+
+.annotations {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    outline: 3px solid green;
+    height: 100%;
+    width: 100%;
+}
+
+.current-time-visible {
+    visibility: visible;
+    width: 200px;
+}
+
+.current-time-hidden {
+    visibility: hidden;
+    display: none;
+    width: 200px;
+}
+
+.behaviors-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+}
+
+.bottom-container {
+    display: flex;
+}
+
+.edit-annotation {
+    overflow-x: scroll;
+    max-width: 75%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    visibility: visible;
+}
+
+.edit-annotation-hidden {
+   display: none;
+   visibility: hidden;
+}
+
+.sidebar-container {
+    display: flex;
+    width: 200px;
+    align-items: center;
+}
+
+.ind-annotations-container {
+    display: flex;
+}
+
+.ind-annotations {
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ind-time {
+    margin-bottom: 5px;
+}
+
+.annotation-button {
+    width: 100px;
+    height: 34px;
+    background-color: white;
+    margin-top: 3px;
+}
+
+
+.video {
+    display: flex;
+    background-color: grey;
+    width: 600px;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hoverImage {
+    position: fixed;
+    width: 200px;
+}
+
+input[type='file'] {
+    color: rgba(0, 0, 0, 0)
+  }
+
+  .save-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 240px;
+      margin-left: 10px;
+      margin-top: 10px;
+      font-size:medium;
+  }
+
+.delete-button {
+    margin: 5px;
+}
+
+.dummy-button {
+    margin: 5px;
+}
+
+.currently-annotating {
+    margin-top: 10px;
+}
+
+.save-warning {
+    margin-top: 5px;
+}
+
+
+
