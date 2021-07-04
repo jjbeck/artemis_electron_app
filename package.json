@@ -63,17 +63,6 @@
       "react-app/jest"
     ]
   },
-  "build": {
-    "appId": "com.loyno-mathcs.your-github-name.weatherstation.wotdevice",
-    "publish" : ["github"],
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
-    "directories": {
-      "buildResources": "assets"
-    }
-  },
   "browserslist": {
     "production": [
       ">0.2%",
