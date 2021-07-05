@@ -8,10 +8,12 @@
   "description": "annotation UI for classification of behaviors in video",
   "author": "jordan",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/jjbeck/artemis_electron_app.git"
+    "type": "git",
+    "url": "https://github.com/jjbeck/artemis_electron_app.git"
   },
   "dependencies": {
+    "@swc/core": "^1.2.62",
+    "@swc/wasm": "^1.2.63",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -19,15 +21,17 @@
     "axios": "^0.21.1",
     "axios-https-proxy-fix": "^0.17.1",
     "bootstrap": "^4.6.0",
+    "bufferutil": "^4.0.3",
     "cors": "^2.8.5",
+    "dayjs": "^1.10.5",
     "dotenv": "^6.2.0",
-    "electron-is-dev": "^1.2.0",
-    "electron-squirrel-startup": "^1.0.0",
     "express-fileupload": "^1.2.1",
     "http-proxy-middleware": "^0.21.0",
+    "jquery": "^3.6.0",
     "morgan": "^1.10.0",
     "nodemon": "^1.19.4",
     "octokit": "^1.1.0",
+    "popper.js": "^1.16.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
@@ -45,8 +49,13 @@
     "react-slick": "^0.28.0",
     "react-timelines": "^2.6.1",
     "reactjs-popup": "^2.0.4",
+    "sass": "^1.35.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.5",
     "uuid": "^8.3.2",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-plugin-serve": "^1.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -75,52 +84,37 @@
       "last 1 safari version"
     ]
   },
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
+  "build": {
+    "appId": "com.example.ElectronAutoUpdate",
+    "publish": {
+      "provider": "github"
+    },
+    "dmg": {
+      "contents": [
         {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "artemis_electron"
-          }
+          "x": 110,
+          "y": 150
         },
         {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ],
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "jjbeck",
-              "name": "artemis_electron",
-              "draft": true
-            }
-          }
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
         }
       ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
     }
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.54",
-    "@electron-forge/maker-deb": "^6.0.0-beta.54",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
-    "@electron-forge/maker-zip": "^6.0.0-beta.54",
-    "@electron-forge/publisher-github": "^6.0.0-beta.54",
     "concurrently": "^6.2.0",
     "cross-env": "^7.0.3",
     "electron": "^13.1.4",
