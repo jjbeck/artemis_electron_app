@@ -89,7 +89,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "electron_publish_example"
+            "name": "artemis_electron_app"
           }
         },
         {
@@ -112,8 +112,8 @@
           "name": "@electron-forge/publisher-github",
           "config": {
             "repository": {
-              "owner": "jordanbecker",
-              "name": "electron-publish-example"
+              "owner": "jjbeck",
+              "name": "artemis_electron_app"
             },
             "draft": true
           }
