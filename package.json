@@ -86,6 +86,11 @@
   },
   "config": {
     "forge": {
+      "github_repository": {
+        "options": {
+          "protocol": "undefined"
+        }
+      },
       "packagerConfig": {},
       "makers": [
         {
@@ -97,6 +102,18 @@
         {
           "name": "@electron-forge/maker-deb",
           "config": {}
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "jjbeck",
+              "name": "artemis_electron_app"
+            },
+            "draft": true
+          }
         }
       ]
     }
