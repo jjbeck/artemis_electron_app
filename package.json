@@ -63,7 +63,7 @@
     "preelectron-package": "npm run build",
     "package": "electron-forge package",
     "make-mac": "electron-forge make --platform darwin",
-    "make-linux": "electron-forge make --platform linux --targets deb",
+    "make-linux": "electron-forge make --platform linux",
     "publish": "electron-forge publish"
   },
   "eslintConfig": {
@@ -99,18 +99,6 @@
           "config": {}
         }
       ],
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "jjbeck",
-              "name": "artemis_electron_app"
-            },
-            "draft": true
-          }
-        }
-      ]
     }
   },
   "devDependencies": {
