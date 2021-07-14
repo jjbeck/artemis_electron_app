@@ -98,7 +98,7 @@
           "name": "@electron-forge/maker-deb",
           "config": {}
         }
-      ],
+      ]
     }
   },
   "devDependencies": {
