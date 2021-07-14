@@ -13,6 +13,10 @@ jobs:
       run: npm install
     - name: build
       run: npm run make-linux
+    - name: release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npx semantic-release
 
   build_on_mac:
     runs-on: macos-latest
@@ -25,4 +29,8 @@ jobs:
       run: npm install
     - name: build
       run: npm run make-mac
+    - name: release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npx semantic-release
       
