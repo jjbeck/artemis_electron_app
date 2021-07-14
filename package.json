@@ -62,7 +62,8 @@
     "electron-package": "./node_modules/.bin/electron-builder -c.extraMetadata.main=build/electron.js --publish always",
     "preelectron-package": "npm run build",
     "package": "electron-forge package",
-    "make": "electron-forge make",
+    "make-mac": "electron-forge make --platform darwin",
+    "make-linux": "electron-forge make --platform linux --targets deb",
     "publish": "electron-forge publish"
   },
   "eslintConfig": {
@@ -88,12 +89,6 @@
       "packagerConfig": {},
       "makers": [
         {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "artemis_electron_app"
-          }
-        },
-        {
           "name": "@electron-forge/maker-zip",
           "platforms": [
             "darwin"
@@ -101,10 +96,6 @@
         },
         {
           "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
           "config": {}
         }
       ],
