@@ -16,10 +16,30 @@ jobs:
       run: npm install
     - name: build-linux
       run: npm run electron-package
-    - name: build-mac
+
+  build_on_mac:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@master
+      with:
+        node-version: 14
+    - name: install dependencies
+      run: npm install
+    - name: build
       run: npm run make-mac
-    - name: release
+
+  release:
+    needs: [build, build_on_mac]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@master
+      with:
+        node-version: 14
+    - name: semantic-release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: npx semantic-release
 
+
+      
