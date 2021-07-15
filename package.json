@@ -59,7 +59,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-package": "./node_modules/.bin/electron-builder -c.extraMetadata.main=build/electron.js --publish always",
+    "electron-package": "./node_modules/.bin/electron-builder -c.extraMetadata.main=build/electron.js",
     "preelectron-package": "npm run build",
     "package": "electron-forge package",
     "make-mac": "electron-forge make --platform darwin",
@@ -128,8 +128,8 @@
         {
           "assets": [
             {
-              "path": "out/make/deb/x64/artemiselectronapp_*_amd64.deb",
-              "label": "artemiselectronapp.deb"
+              "path": "dist/artemiselectronapp_-*.Appimage",
+              "label": "artemiselectronapp.Appimage"
             },
             {
               "path": "out/make/zip/darwin/x64/artemiselectronapp-darwin-x64-*-.zip",

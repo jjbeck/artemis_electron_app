@@ -5,8 +5,8 @@ on:
       - master
 
 jobs:
-  build_on_linux:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: [ubuntu-latest, macos-latest]
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@master
@@ -14,26 +14,12 @@ jobs:
         node-version: 14
     - name: install dependencies
       run: npm install
-    - name: build
-      run: npm run make-linux
-    - name: release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npx semantic-release
-
-  build_on_mac:
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@master
-      with:
-        node-version: 14
-    - name: install dependencies
-      run: npm install
-    - name: build
+    - name: build-linux
+      run: npm run electron-package
+    -name: build-mac
       run: npm run make-mac
     - name: release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: npx semantic-release
-      
+
