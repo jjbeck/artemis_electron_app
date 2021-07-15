@@ -14,7 +14,7 @@ const Privacy = () => {
       <div className="page-title">Information Usage</div>
       <div className="text-div">Information collected by AutoPlanet is used to train our machine learning model and ensure that users have the proper access controls when using the website. AutoPlanet also reserves the right to perform machine learning analytics on videos uploaded by users on Predict page.</div>
       
-      <div className="page-title">Information Sharing</div>
+      <div className="page-title">Information</div>
       <div className="text-div">AutoPlanet does not share any collected information with any third parties outside of those used to host the website and database.</div>
       <br/>
       <br/>
