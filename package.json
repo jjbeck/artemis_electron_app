@@ -1,6 +1,6 @@
 {
   "name": "artemiselectronapp",
-  "version": "0.13.1",
+  "version": "0.13.0",
   "private": true,
   "license": "MIT",
   "homepage": "./",
@@ -59,7 +59,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-package": "./node_modules/.bin/electron-builder -c.extraMetadata.main=build/electron.js",
+    "electron-package": "./node_modules/.bin/electron-builder -c.extraMetadata.main=build/electron.js --publsh always",
     "preelectron-package": "npm run build",
     "package": "electron-forge package",
     "make-mac": "electron-forge make --platform darwin",
@@ -128,8 +128,8 @@
         {
           "assets": [
             {
-              "path": "dist/artemiselectronapp_-*.Appimage",
-              "label": "artemiselectronapp.Appimage"
+              "path": "out/make/deb/x64/artemiselectronapp_*_amd64.deb",
+              "label": "artemiselectronapp.deb"
             },
             {
               "path": "out/make/zip/darwin/x64/artemiselectronapp-darwin-x64-*-.zip",
