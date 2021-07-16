@@ -59,7 +59,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-package": "./node_modules/.bin/electron-builder -c.extraMetadata.main=build/electron.js --publsh always",
+    "electron-package": "./node_modules/.bin/electron-builder -c.extraMetadata.main=build/electron.js",
     "preelectron-package": "npm run build",
     "package": "electron-forge package",
     "make-mac": "electron-forge make --platform darwin",

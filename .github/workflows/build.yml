@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@master
@@ -15,7 +15,7 @@ jobs:
     - name: install dependencies
       run: npm install
     - name: build-linux
-      run: npm run make-linux
+      run: npm run electron-package
     - name: release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
