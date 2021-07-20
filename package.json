@@ -1,6 +1,6 @@
 {
   "name": "artemiselectronapp",
-  "version": "0.13.4",
+  "version": "0.13.3",
   "private": true,
   "license": "MIT",
   "homepage": "./",
@@ -59,8 +59,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-package": "./node_modules/.bin/electron-builder -c.extraMetadata.main=build/electron.js",
-    "preelectron-package": "npm run build",
+    "electron-package": "./node_modules/.bin/electron-builder -c.extraMetadata.main=build/electron.js -ml",
+    "postinstall": "electron-builder install-app-deps",
     "package": "electron-forge package",
     "make-mac": "electron-forge make --platform darwin",
     "publish": "electron-forge publish"
@@ -123,12 +123,12 @@
         {
           "assets": [
             {
-              "path": "out/make/deb/x64/artemiselectronapp_*_amd64.deb",
-              "label": "artemiselectronapp.deb"
+              "path": "out/Artemisgcp-*-mac.zip",
+              "label": "artemiselectronapp.zip"
             },
             {
-              "path": "out/make/zip/darwin/x64/artemiselectronapp-darwin-x64-*-.zip",
-              "label": "artemiselectronapp.zip"
+              "path": "out/Artemisgcp-*.Appimage",
+              "label": "artemiselectronapp.Appimage"
             }
           ]
         }
@@ -149,8 +149,9 @@
     "@semantic-release/release-notes-generator": "^9.0.3",
     "concurrently": "^6.2.0",
     "cross-env": "^7.0.3",
+    "dmg-builder": "^22.11.7",
     "electron": "^13.1.4",
-    "electron-builder": "^22.11.7",
+    "electron-builder": "^22.9.1",
     "electron-packager": "^15.2.0",
     "wait-on": "^6.0.0"
   }
