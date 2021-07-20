@@ -14,6 +14,10 @@ jobs:
         node-version: 14
     - name: install dependencies
       run: npm install
+    - name: build
+      run: npm run build
+      env:
+        CI: false
     - name: package
       run: npm run electron-package
     - name: release
