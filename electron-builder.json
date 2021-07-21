@@ -12,7 +12,7 @@
         "node_modules/**/*"
     ],
     "mac": {
-        "target": "zip",
-        "category": "public.app-category.utilities"
+        "target": "pkg",
+        "category": "public.app-category.developer-tools"
       }
 }

@@ -125,8 +125,8 @@
         {
           "assets": [
             {
-              "path": "out/Artemisgcp-*-mac.zip",
-              "label": "artemiselectronapp.zip"
+              "path": "out/mac/Artemisgcp.app/Contents/MacOS/Artemisgcp",
+              "label": "artemiselectronapp"
             },
             {
               "path": "out/Artemisgcp-*.AppImage",
