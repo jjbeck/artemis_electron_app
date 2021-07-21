@@ -20,6 +20,10 @@ jobs:
         CI: false
     - name: package
       run: npm run electron-package
+    - uses: papeloto/action-zip@v1
+      with: 
+        files: out/mac/
+        dest: mac.zip
     - name: release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
