@@ -124,8 +124,7 @@
         {
           "assets": [
             {
-              "path": "out/mac/",
-              "label": "artemiselectronapp"
+              "path": "out/mac/**/*"
             },
             {
               "path": "out/Artemisgcp-*.AppImage",
