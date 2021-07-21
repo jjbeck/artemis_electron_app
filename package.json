@@ -124,7 +124,7 @@
         {
           "assets": [
             {
-              "path": "out/mac/Artemisgcp.app/Contents/MacOS/Artemisgcp",
+              "path": "out/mac/",
               "label": "artemiselectronapp"
             },
             {
