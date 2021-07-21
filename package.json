@@ -7,7 +7,7 @@
   "email": "jordan_becker@brown.edu",
   "main": "./public/electron.js",
   "description": "annotation UI for classification of behaviors in video",
-  "author": "John Doe <john@doe.com>",
+  "author": "Jordan <john@doe.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/jjbeck/artemis_electron_app.git",
