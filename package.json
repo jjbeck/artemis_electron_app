@@ -61,7 +61,6 @@
     "eject": "react-scripts eject",
     "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-package": "electron-builder build --mac --linux -c.extraMetadata.main=build/electron.js --publish never",
-    "preinstall": "npm run build",
     "postinstall": "electron-builder install-app-deps",
     "package": "electron-forge package",
     "make-mac": "electron-forge make --platform darwin",
