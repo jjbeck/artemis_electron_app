@@ -5,39 +5,14 @@
     "directories": {
         "app": ".",
         "output": "out",
-        "buildResources": "build-res"
+        "buildResources": "build"
     },
     "files": [
-        "package.json",
-        "app/**/*",
-        "node_modules"
+        "build/**/*",
+        "node_modules/**/*"
     ],
-    "dmg": {
-        "background": null,
-        "backgroundColor": "#ffffff",
-        "window": {
-            "width": "400",
-            "height": "300"
-        },
-        "contents": [
-            {
-                "x": 100,
-                "y": 100
-            },
-            {
-                "x": 300,
-                "y": 100,
-                "type": "link",
-                "path": "/Applications"
-            }
-        ]
-    },
     "mac": {
         "target": "zip",
         "category": "public.app-category.utilities"
-      },
-    "linux": {
-        "target": "AppImage",
-        "category": "Utility"
-    }
+      }
 }
