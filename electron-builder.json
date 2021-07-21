@@ -5,14 +5,20 @@
     "directories": {
         "app": ".",
         "output": "out",
-        "buildResources": "build"
+        "buildResources": "build-res"
     },
     "files": [
+        "package.json",
+        "app/**/*",
         "build/**/*",
         "node_modules/**/*"
     ],
     "mac": {
-        "target": "pkg",
-        "category": "public.app-category.developer-tools"
-      }
+        "target": "zip",
+        "category": "public.app-category.utilities"
+      },
+    "linux": {
+        "target": "AppImage",
+        "category": "Utility"
+    }
 }
