@@ -24,7 +24,7 @@ jobs:
     - uses: papeloto/action-zip@v1
       with: 
         files: out/
-        dest: mac2.zip
+        dest: mac.zip
     - name: release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
