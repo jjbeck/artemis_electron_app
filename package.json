@@ -128,10 +128,7 @@
               "path": "mac.zip"
             },
             {
-              "path": "out/Artemisgcp-*-mac.zip"
-            },
-            {
-              "path": "mas.zip"
+              "path": "out/Artemisgcp-*.dmg"
             },
             {
               "path": "out/Artemisgcp-*.AppImage",
