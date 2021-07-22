@@ -5,7 +5,7 @@ on:
       - master
 
 jobs:
-  build:
+  build-linux:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -26,8 +26,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: npx semantic-release
 
-jobs:
-  build:
+  build-mac:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
