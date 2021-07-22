@@ -1,6 +1,10 @@
 {
   "name": "artemisgcp",
+<<<<<<< HEAD
   "version": "0.13.12",
+=======
+  "version": "0.13.14",
+>>>>>>> e96d7c64d40530052592d1b0bf91b49c9f63841a
   "private": true,
   "license": "MIT",
   "homepage": "./",
