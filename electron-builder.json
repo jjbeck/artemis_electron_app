@@ -2,6 +2,10 @@
     "appId": "com.artemisgcp.fileio",
     "productName": "Artemisgcp",
     "copyright": "THATISUDAY TECH PVT. LTD.",
+    "publish": {
+        "provider": "github",
+        "token": "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",
+    },
     "directories": {
         "app": ".",
         "output": "out",
@@ -14,7 +18,7 @@
         "node_modules/**/*"
     ],
     "mac": {
-        "target": "zip",
+        "target": "pkg",
         "category": "public.app-category.utilities"
       },
     "linux": {
