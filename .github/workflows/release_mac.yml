@@ -23,12 +23,8 @@ jobs:
       run: npm run electron-package
     - uses: papeloto/action-zip@v1
       with: 
-        files: out/mac/
+        files: out/
         dest: mac.zip
-    - uses: papeloto/action-zip@v1
-      with: 
-        files: out/mas/
-        dest: mas.zip
     - name: release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
