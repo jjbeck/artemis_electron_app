@@ -151,7 +151,7 @@
     "cross-env": "^7.0.3",
     "dmg-builder": "^22.11.7",
     "electron": "^13.1.4",
-    "electron-builder": "^22.9.1",
+    "electron-builder": "^22.2.0",
     "electron-packager": "^15.2.0",
     "wait-on": "^6.0.0"
   }

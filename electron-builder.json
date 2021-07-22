@@ -5,7 +5,7 @@
     "directories": {
         "app": ".",
         "output": "out",
-        "buildResources": "build-res"
+        "buildResources": "build"
     },
     "files": [
         "package.json",
@@ -15,7 +15,7 @@
     ],
     "mac": {
         "target": "pkg",
-        "category": "public.app-category.utilities"
+        "category": "public.app-category.developer-tools"
       },
     "linux": {
         "target": "AppImage",
