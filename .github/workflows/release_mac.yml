@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@master
@@ -20,11 +20,29 @@ jobs:
         CI: false
     - name: package
       continue-on-error: true
-      run: npm run electron-package
-    - uses: papeloto/action-zip@v1
-      with: 
-        files: out/
-        dest: mac.zip
+      run: npm run electron-package-linux
+    - name: release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npx semantic-release
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@master
+      with:
+        node-version: 14
+    - name: install dependencies
+      run: npm install
+    - name: build
+      run: npm run build
+      env:
+        CI: false
+    - name: package
+      continue-on-error: true
+      run: npm run electron-package-mac
     - name: release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
