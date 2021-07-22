@@ -14,7 +14,7 @@
         "node_modules/**/*"
     ],
     "mac": {
-        "target": "pkg",
+        "target": "zip",
         "category": "public.app-category.utilities"
       },
     "linux": {

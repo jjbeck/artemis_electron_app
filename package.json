@@ -127,6 +127,12 @@
               "path": "mac.zip"
             },
             {
+              "path": "out/Artemisgcp-*-mac.zip"
+            },
+            {
+              "path": "mas.zip"
+            },
+            {
               "path": "out/Artemisgcp-*.AppImage",
               "label": "artemiselectronapp.Appimage"
             }
