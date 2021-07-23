@@ -58,7 +58,10 @@ jobs:
         node-version: 14
     - uses: actions/download-artifact@v2
       with:
-        name: [linux-package, mac-package]
+        name: linux-package
+    - uses: actions/download-artifact@v2
+      with:
+        name: mac-package
     - name: install dependencies
       run: npm install
     - name: release
