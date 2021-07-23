@@ -62,6 +62,8 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: mac-package
+    - name: see directory
+      run: ls
     - name: install dependencies
       run: npm install
     - name: release
