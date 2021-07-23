@@ -21,6 +21,11 @@ jobs:
     - name: package
       continue-on-error: true
       run: npm run electron-package-linux
+    - uses: actions/upload-artifact@v2
+      with:
+        name: linux-package
+        path: out/Artemisgcp-*.AppImage
+    
 
   build-mac:
     runs-on: macos-latest
@@ -38,6 +43,10 @@ jobs:
     - name: package
       continue-on-error: true
       run: npm run electron-package-mac
+    - uses: actions/upload-artifact@v2
+      with:
+        name: mac-package
+        path: out/Artemisgcp-*.dmg
   
   package:
     runs-on: ubuntu-latest
@@ -47,6 +56,9 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: 14
+    - uses: actions/download-artifact@v2
+      with:
+        name: [linux-package, mac-package]
     - name: install dependencies
       run: npm install
     - name: release
