@@ -128,10 +128,10 @@
               "path": "mac.zip"
             },
             {
-              "path": "out/Artemisgcp-*.dmg"
+              "path": "Artemisgcp-*.dmg"
             },
             {
-              "path": "out/Artemisgcp-*.AppImage",
+              "path": "Artemisgcp-*.AppImage",
               "label": "artemiselectronapp.Appimage"
             }
           ]
