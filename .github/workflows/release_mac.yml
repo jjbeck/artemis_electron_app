@@ -21,11 +21,7 @@ jobs:
     - name: package
       continue-on-error: true
       run: npm run electron-package-linux
-    - name: release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npx semantic-release
-
+      
   build-mac:
     runs-on: macos-latest
     steps:
@@ -42,6 +38,10 @@ jobs:
     - name: package
       continue-on-error: true
       run: npm run electron-package-mac
+  
+  package:
+    needs: [build-linux, build-mac]
+    runs-on: ubuntu-latest
     - name: release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
