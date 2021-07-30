@@ -10,8 +10,8 @@ function UploadAnnotations(props) {
             const data = JSON.parse(e.target.result);
             let annots = [];
             for (const annot of data.timeSegmentAnnotations) {
-                const startTime = annot.startTime.slice(0,-1)
-                const endTime = annot.endTime.slice(0,-1)
+                const startTime = parseFloat(annot.startTime.slice(0,-1))
+                const endTime = parseFloat(annot.endTime.slice(0,-1))
                 annots.push({
                     displayName: annot.displayName,
                     startTime: startTime,

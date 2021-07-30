@@ -21,20 +21,20 @@ function EditAnnotation(props) {
         props.setRefresh({});
     }
 
-    const handleAnnotationUpdate = (annotation, a, e, id) => {
+    const handleAnnotationUpdate = (annotation, e) => {
         if (!e.target.value) {
             console.log('empty')
         }
-
         const annotations = [...props.annot];
         
         if (e.target.name === "start") {
-          annotations.find(item => item.id === annotation.id).startTime = e.target.value;
+          annotations.find(item => item.id === annotation.id).startTime = 2;
+          console.log(annotations)
           props.setAnnot(annotations);
         }
 
         if (e.target.name === "end") {
-            annotations.find(item => item.id === annotation.id).startTime = e.target.value;
+            annotations.find(item => item.id === annotation.id).endTime = parseFloat(e.target.value);
             props.setAnnot(annotations);
           }
 
@@ -43,6 +43,7 @@ function EditAnnotation(props) {
         props.setCurrKey(null);
     }
 
+    console.log(props.annot);
     
     return (
         <>
@@ -54,8 +55,8 @@ function EditAnnotation(props) {
                             <label> {annotation.displayName}: </label>
                             </div>
                             <div className="ind-time">
-                            <input type="number" step="0.1" className={Math.round(annotation.startTime)} name="start" aria-label='annotation start time' style={{ width: "60px" }} value={Math.round(annotation.startTime * 100) / 100} onChange={(e) => handleAnnotationUpdate(annotation, 0, e)} />
-                            <input type="number" step="0.1" className="form-input" name="end" aria-label='annotation end time' style={{ width: "60px" }} value={Math.round(annotation.endTime * 100) / 100} onChange={(e) => handleAnnotationUpdate(annotation, 1, e)} />
+                            <input type="number" step="0.1" className={Math.round(annotation.startTime)} name="start" aria-label='annotation start time' style={{ width: "60px" }} value={annotation.startTime} onChange={(e) => handleAnnotationUpdate(annotation, e)} />
+                            <input type="number" step="0.1" className="form-input" name="end" aria-label='annotation end time' style={{ width: "60px" }} value={annotation.endTime} onChange={(e) => handleAnnotationUpdate(annotation, e)} />
                             </div>
                             <div className="ind-helpers" type="submit">
                             <BsFillTrashFill size={20} onClick={() => deleteAnnotation(annotation.id)} />

@@ -140,11 +140,13 @@ const Annotate = () => {
                             
                             const newAnnot = {
                                 displayName: behaviors[i].text,
-                                startTime: startTime[1],
-                                endTime: videoPlayedSeconds,
+                                startTime: parseFloat(startTime[1].toFixed(3)),
+                                endTime: parseFloat(videoPlayedSeconds.toFixed(3)),
                                 training: true,
                                 id: v4(),
                             }
+
+                            console.log(newAnnot)
                             
                             if (startTime[0] < videoPlayed) {     
                                 setAnnot([...annot, newAnnot])
