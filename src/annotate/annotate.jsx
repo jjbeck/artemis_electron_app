@@ -109,6 +109,8 @@ const Annotate = () => {
     const [play, setPlay] = useState(false);
     const [annotating, setAnnotating] = useState(false);
 
+    
+
     useEffect(() => {
         localStorage.setItem("annot", JSON.stringify(annot))
     }, [annot]);
@@ -124,6 +126,10 @@ const Annotate = () => {
         else {
             for (const i in behaviors) {
                 if (behaviors[i].key === e.key) {
+                    if (fps === null) {
+                        alert("Set frames per second of video before annotating")
+                        break
+                    }
                     if (currKeyState === false) {
                         // Initial key press
                         console.log('first key"');
@@ -142,12 +148,12 @@ const Annotate = () => {
                                 displayName: behaviors[i].text,
                                 startTime: parseFloat(startTime[1].toFixed(3)),
                                 endTime: parseFloat(videoPlayedSeconds.toFixed(3)),
+                                startFPS: startTime[2],
+                                endFPS: videoFrame,
                                 training: true,
                                 id: v4(),
                             }
 
-                            console.log(newAnnot)
-                            
                             if (startTime[0] < videoPlayed) {     
                                 setAnnot([...annot, newAnnot])
                                 console.log(videoPlayedSeconds);
@@ -299,6 +305,7 @@ const Annotate = () => {
                           setCurrKey={setCurrKey}
                           annot={annot}
                           setAnnot={setAnnot}
+                          fps={fps}
                         />
                         </div>
                         <div className="save-warning">

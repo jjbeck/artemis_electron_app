@@ -28,13 +28,15 @@ function EditAnnotation(props) {
         const annotations = [...props.annot];
         
         if (e.target.name === "start") {
-          annotations.find(item => item.id === annotation.id).startTime = 2;
+          annotations.find(item => item.id === annotation.id).startTime = parseFloat(e.target.value);
+          annotations.find(item => item.id === annotation.id).startFPS = Math.round(parseFloat(e.target.value) * props.fps)
           console.log(annotations)
           props.setAnnot(annotations);
         }
 
         if (e.target.name === "end") {
             annotations.find(item => item.id === annotation.id).endTime = parseFloat(e.target.value);
+            annotations.find(item => item.id === annotation.id).endFPS = Math.round(parseFloat(e.target.value) * props.fps)
             props.setAnnot(annotations);
           }
 

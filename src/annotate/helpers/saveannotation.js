@@ -18,35 +18,23 @@ function SaveAnnotation(props) {
 
     const downloadAnnotations = async () => {
         const annotations = [...props.annot];
-        
+        let j = 0;
 
-        let trainAnnot = [];
-        let testAnnot = [];
+        let frame = {};
+        let pred = {};
 
         for (const annot of annotations) {
-            if (annot.training === true) {
-                trainAnnot.push({
-                    displayName: annot.displayName,
-                    startTime: `${annot.startTime}s`,
-                    endTime: `${annot.endTime}s`,
-                });
-            } else if (annot.training === false) {
-                testAnnot.push({
-                    displayName: annot.displayName,
-                    startTime: annot.startTime,
-                    endTime: annot.endTime,
-                });
-            } 
+            for (let i = annot.startFPS; i < annot.endFPS; i++) {
+                frame[j.toString()] = i;
+                pred[j.toString()] = annot.displayName;
+                j += 1;
+              }
         }
+        
+        const finalAnnotation = {frame,pred}
 
-        const trainOutput = JSON.stringify({
-            videoGcsUri: "",
-            timeSegmentAnnotations: trainAnnot,
-        dataItemResourceLabels: {
-            "aiplatform.googleapis.com/ml_use": "train"
-        }});
 
-        console.log(trainOutput);
+        const trainOutput = JSON.stringify(finalAnnotation)
 
         const trainBlob = new Blob([trainOutput]);
         const trainFileDownloadUrl = URL.createObjectURL(trainBlob);
